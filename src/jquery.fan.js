@@ -113,7 +113,6 @@ if (jQuery) {
   /*
 
     jQuery fan plugin
-    by Mat Ryer
 
   */
 
