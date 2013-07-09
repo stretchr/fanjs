@@ -8,12 +8,20 @@ jQuery plugin and supporting code to allow you to calculate the position of elem
 
     $("elements").fan(options);
 
+## Overview
+
+Fanjs calculates the positions (and sets them using jQuery) of elements, centered around a point on the page.
+
+By default, the elements will be fanned around the center of their parent container.  For exmaple, `<li>`s will be fanned around their `<ul>` parent.
+
+You can customise the behaviour of fanjs using the options described below.
+
 ### Options
 
 All options can either be a literal value, or a function that
 calculates and returns the value.
 
-#### Fanning
+#### Fanning:
 
 `angle` The angle at which the item should be fanned from center.  Default: Evenly spread items.
 
@@ -59,24 +67,46 @@ Default: options.itemDelay per item (e.g. itemIndex * 100)
 
 `before` Called once before any items get fanned.
 
-    function(total, options) {
+    before: function(total, options) {
       // 'this' = all elements
     }
 
 `after` Called once after all items have been fanned.
 
-    function(total, options) {
+    after: function(total, options) {
       // 'this' = all elements
     }
 
 `start` Called before each item starts being fanned.
 
-    function(element, index, total, options) {
+    start: function(element, index, total, options) {
       // 'this' = individual element
     }
 
 `end` Called after each item has been fanned.
 
-    function(element, index, total, options) {
+    end: function(element, index, total, options) {
       // 'this' = individual element
     }
+
+## Advanced
+
+The jQuery plugin is optional, and you can instead just use the underlying calculation functions directly yourself.
+
+### `Fan.getFanPoint(a, x, y, radius_x, radius_y)`
+
+`getFanPoint` gets the `Fan.Point` describing the position at angle `a` degrees, `radius_x`,`radius_y` distance away from the center point at `x`,`y`.
+
+### `Fan.getFanPointRadians(rads, x, y, radius_x, radius_y)`
+
+`getFanPointRadians` gets the `Fan.Point` describing the position at angle `rads` radians, `radius_x`,`radius_y` distance away from the center point at `x`,`y`.
+
+### `Fan.Point`
+
+The `Fan.Point` object contains simply `x`, `y` coordinates.
+
+    new Fan.Point(x, y)
+
+#### `Fan.Point.offset`
+
+The offset function adds one `Fan.Point` to another.
