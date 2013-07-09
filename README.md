@@ -114,3 +114,9 @@ The `Fan.Point` object contains simply `x`, `y` coordinates.
 ##### `Fan.Point.offset`
 
 The offset function adds one `Fan.Point` to another.
+
+## Geeks
+
+Geeks will find this function interesting: https://github.com/matryer/fanjs/blob/master/src/jquery.fan.js#L92
+
+It's where all the magic happens.
