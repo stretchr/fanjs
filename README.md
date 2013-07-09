@@ -93,20 +93,20 @@ Default: options.itemDelay per item (e.g. itemIndex * 100)
 
 The jQuery plugin is optional, and you can instead just use the underlying calculation functions directly yourself.
 
-### `Fan.getFanPoint(a, x, y, radius_x, radius_y)`
+#### `Fan.getFanPoint(a, x, y, radius_x, radius_y)`
 
 `getFanPoint` gets the `Fan.Point` describing the position at angle `a` degrees, `radius_x`,`radius_y` distance away from the center point at `x`,`y`.
 
-### `Fan.getFanPointRadians(rads, x, y, radius_x, radius_y)`
+#### `Fan.getFanPointRadians(rads, x, y, radius_x, radius_y)`
 
 `getFanPointRadians` gets the `Fan.Point` describing the position at angle `rads` radians, `radius_x`,`radius_y` distance away from the center point at `x`,`y`.
 
-### `Fan.Point`
+#### `Fan.Point`
 
 The `Fan.Point` object contains simply `x`, `y` coordinates.
 
     new Fan.Point(x, y)
 
-#### `Fan.Point.offset`
+##### `Fan.Point.offset`
 
 The offset function adds one `Fan.Point` to another.
