@@ -240,13 +240,7 @@ if (jQuery) {
         var radius = getPoint(options.radius, el, i, totalCount, options);
         var angle = getVal(options.angle, el, i, totalCount, options);
         angle += getVal(options.angleOffset, el, i, totalCount, options);
-        var newPos = Fan.getFanPoint(
-          /* angle */     angle,
-          /* center x */  center.x,
-          /* center y */  center.y,
-          /* radius x */  radius.x,
-          /* radius y */  radius.y
-        );
+        var newPos = Fan.getFanPoint(angle, center.x, center.y, radius.x, radius.y);
 
         // set essential CSS right away
         var essentialCss = getVal(options.essentialCss, el, i, totalCount, options);
