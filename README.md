@@ -1,19 +1,19 @@
 
-jQuery fan plugin
+# fanjs
+
+*Rounding the square*
 by Mat Ryer
 
-Usage
------
+## Usage
 
   $("elements").fan(options);
 
-Options
--------
+### Options
 
 All options can either be a literal value, or a function that
 calculates and returns the value.
 
-Fanning:
+#### Fanning
 
   angle:        The angle at which the item should be fanned from center.
                 Default: Evenly spread items.
@@ -35,7 +35,8 @@ Fanning:
   center:       The Fan.Point describing the center point of the fan.
                 Default: The center of the parent container.
 
-Animation: (see http://api.jquery.com/animate/)
+#### Animation:
+  * (see http://api.jquery.com/animate/)
 
   duration:     The jQuery animation duration option, a string or number
                 describing how fast the animation will take to complete.
@@ -60,15 +61,14 @@ Animation: (see http://api.jquery.com/animate/)
                 options parameter. http://api.jquery.com/animate/#animate-properties-options
                 Default: duration, easing, complete etc.
 
-Style:
+#### Style:
 
   css:          More jQuery CSS options to be applied to the element.  Useful
                 for adding extra animation transitions to the elements as they
                 are being fanned.
                 Default: {} (i.e. nothing)
 
-Events
-------
+### Events
 
   before:       Called once before any items get fanned.
                 function(total, options) 
