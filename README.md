@@ -40,46 +40,56 @@ calculates and returns the value.
 
 Fanjs allows you to control how it is animated:
 
-  `duration`     The jQuery animation duration option, a string or number
-                describing how fast the animation will take to complete.
+`duration` The jQuery animation duration option, a string or number describing how fast the animation will take to complete.
 
-                There must be a duration property in order for animation
-                to occur at all.  Use {duration:400} for default jQuery
-                behaviour.
+There must be a duration property in order for animation to occur at all.  Use {duration:400} for default jQuery behaviour.
 
-                Default: "" (i.e. don't duration)
+Default: "" (i.e. don't duration)
 
-  `delay`        The delay before animating the element.
-                Default: options.itemDelay per item (e.g. itemIndex * 100)
+`delay` The delay before animating the element.
 
-  `itemDelay`    The ms to delay for each item.  Used by the default 'delay'
-                function.
-                Default: 100
+Default: options.itemDelay per item (e.g. itemIndex * 100)
 
-  `easing`       The jQuery easing to use when animating.
-                Default: Nothing (i.e. jQuery default)
+`itemDelay` The ms to delay for each item.  Used by the default 'delay' function.
 
-  `animate`      An object of options that will make up the jQuery animate
-                options parameter. http://api.jquery.com/animate/#animate-properties-options
-                Default: duration, easing, complete etc.
+Default: 100
+
+`easing` The jQuery easing to use when animating.
+
+Default: Nothing (i.e. jQuery default)
+
+`animate` An object of options that will make up the jQuery animate options parameter. http://api.jquery.com/animate/#animate-properties-options
+
+Default: duration, easing, complete etc.
 
 #### Style:
 
-  `css`          More jQuery CSS options to be applied to the element.  Useful
-                for adding extra animation transitions to the elements as they
-                are being fanned.
-                Default: {} (i.e. nothing)
+`css` More jQuery CSS options to be applied to the element.  Useful for adding extra animation transitions to the elements as they are being fanned.
+
+Default: {} (i.e. nothing)
 
 ### Events
 
-  `before`       Called once before any items get fanned.
-                function(total, options) 
+`before` Called once before any items get fanned.
 
-  `after`        Called once after all items have been fanned.
-                function(total, options)
+    function(total, options) {
+      // 'this' = all elements
+    }
 
-  `start`        Called before each item starts being fanned.
-                function(element, index, total, options)
+`after` Called once after all items have been fanned.
 
-  `end`          Called after each item has been fanned.
-                function(element, index, total, options)
+    function(total, options) {
+      // 'this' = all elements
+    }
+
+`start` Called before each item starts being fanned.
+
+    function(element, index, total, options) {
+      // 'this' = individual element
+    }
+
+`end` Called after each item has been fanned.
+
+    function(element, index, total, options) {
+      // 'this' = individual element
+    }
