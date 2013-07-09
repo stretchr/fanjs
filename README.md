@@ -4,6 +4,10 @@ By Mat Ryer
 
 jQuery plugin and supporting code to allow you to calculate the position of elements in a circular pattern around a center point.  
 
+## Demos
+
+  * see FanJS in action: http://matryer.com/fanjs/demo/1.html
+
 ## Usage
 
     $("elements").fan(options);
