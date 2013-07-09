@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FanJS demo</title>
+    <link href="reset.css" rel="stylesheet"></link>
+    <style>
+
+      #canvas {
+        background-color: #eee;
+        margin-top: 20px;
+      }
+
+      #canvas li {
+        text-align: center;
+        background-color: #555;
+        color: white;
+        padding: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>
+      <a href="http://github.com/matryer/fanjs">fan.js</a> <em>- by <a href="http://github.com/matryer">Mat Ryer</a></em> - Adnimated arcs
+    </h1>
+
+    <ul id="canvas" style="width: 800px; height: 500px; margin: auto; position: relative">
+      <li>
+        Item one
+      </li>
+      <li>
+        Item two
+      </li>
+      <li>
+        Item three
+      </li>
+      <li>
+        Item four
+      </li>
+      <li>
+        Item five
+      </li>
+      <li>
+        Item six
+      </li>
+      <li>
+        Item seven
+      </li>
+      <li>
+        Item eight
+      </li>
+      <li>
+        Item nine
+      </li>
+      <li>
+        Item ten
+      </li>
+    </ul>
+
+    <div class="pane">
+      <a href="1.html">Next</a>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="../src/jquery.fan.js"></script>
+    <script>
+
+      $(function(){
+
+        // move items to the middle, then animate them outwards.
+        $("#canvas li").fan({
+          radius: 0,
+          css: {
+            opacity: 0
+          }
+        }).fan({
+          angle: Fan.arc(0, 180),
+          duration: 500, 
+          radius: new Fan.Point(300, 100),
+          itemDelay: 250,
+          css: {
+            opacity: 1
+          },
+          after: function() {
+           
+            $(this).fan({
+              angle: Fan.arc(180, 360),
+              duration: 500, 
+              radius: new Fan.Point(300, 100),
+              itemDelay: 0,
+              after: function() {
+
+                $(this).fan({
+                  angle: Fan.arc(90, 270),
+                  duration: 500, 
+                  radius: new Fan.Point(300, 100),
+                  itemDelay: 0,
+                  after: function() {
+
+                    $(this).fan({
+                      angle: Fan.arc(-90, 90),
+                      duration: 500, 
+                      radius: new Fan.Point(300, 100),
+                      itemDelay: 0,
+                      after: function(){
+
+                        $(this).fan({
+                          angle: Fan.arc(0, 360),
+                          duration: 500, 
+                          radius: 0,
+                          itemDelay: 250,
+                          css: {
+                            opacity: 0
+                          }
+                        });
+
+                      }
+                    });
+                    
+                  }
+                });
+
+              }
+            });
+
+          }
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
