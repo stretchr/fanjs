@@ -15,25 +15,29 @@ calculates and returns the value.
 
 #### Fanning
 
-  `angle`        The angle at which the item should be fanned from center.
-                Default: Evenly spread items.
+`angle` The angle at which the item should be fanned from center.
 
-                You can specify an arc using the Fan.arc function like this:
-                {
-                  angle: Fan.arc(0, 180)
-                }
-                where 0 = start angle, 180 = end angle
+Default: Evenly spread items.
 
-  `angleOffset`  The number of degrees to offset the angle by for each
-                item.  This allows you to create less uniform fans.
-                Default: 0
+You can specify an arc using the Fan.arc function like this:
 
-  `radius`       The Fan.Point containg the X and Y distance from center
-                that the item should be fanned out at.
-                Default: A suitable radius for the parent container.
+    {
+      angle: Fan.arc(0, 180)
+    }
 
-  `center`       The Fan.Point describing the center point of the fan.
-                Default: The center of the parent container.
+where 0 = start angle, 180 = end angle
+
+`angleOffset` The number of degrees to offset the angle by for each item.  This allows you to create less uniform fans.
+
+Default: 0
+
+`radius` The Fan.Point containg the X and Y distance from center that the item should be fanned out at.
+
+Default: A suitable radius for the parent container.
+
+`center` The Fan.Point describing the center point of the fan.
+
+Default: The center of the parent container.
 
 #### Animation:
   * (see http://api.jquery.com/animate/)
